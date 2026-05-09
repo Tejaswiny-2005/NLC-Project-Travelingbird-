@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mumbai - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🌇 Mumbai – The City That Never Sleeps</h1>
+  <img src="../media/images/mumbai.jpg" alt="Mumbai Skyline" />
+
+  <section>
+    <h2>🌟 Must-Visit Places</h2>
+    <ul>
+      <li>🕌 Gateway of India – historic arch facing the Arabian Sea</li>
+      <li>🌉 Bandra-Worli Sea Link – stunning drive over sea</li>
+      <li>🛍️ Colaba Causeway – shopping & cafés</li>
+      <li>🌴 Marine Drive – sunset stroll by the sea</li>
+      <li>🎥 Film City – glimpse of Bollywood sets</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Top Activities</h2>
+    <ul>
+      <li>🍢 Eat street food at Chowpatty (pav bhaji, gola, bhel)</li>
+      <li>📸 Click selfies at CST & Gateway of India</li>
+      <li>🚗 Drive Marine Drive at night</li>
+      <li>🛶 Ferry to Elephanta Caves</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>November to February (cooler weather, beach walks, no rains)</p>
+  </section>
+
+  <section>
+    <h2>🏨 Stay Recommendations</h2>
+    <ul>
+      <li>🌟 The Taj Mahal Palace – iconic sea-facing luxury</li>
+      <li>🏨 Trident Nariman Point – skyscraper views</li>
+      <li>🛌 Zostel Mumbai – fun, budget hostel</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍴 What to Eat</h2>
+    <ul>
+      <li>🌯 Vada Pav – the OG Mumbai snack</li>
+      <li>🍜 Misal Pav, Bombay Sandwich, Ragda Pattice</li>
+      <li>🍧 Gola (ice pops), Falooda & Kulfi</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Estimated Budget</h2>
+    <p>₹8,000 – ₹14,000 per person for 3-day city stay</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Mumbai on Map</h2>
+    <iframe src="https://www.google.com/maps?q=mumbai+india&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Explore Mumbai</h2>
+    <video controls>
+      <source src="../media/videos/mumbai.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Mumbai</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_taj.jpg" alt="The Taj Mahal Palace">
+      <h3>The Taj Mahal Palace</h3>
+      <p>Starting at ₹12,000/night</p>
+      <button onclick="bookHotel('The Taj Mahal Palace')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_trident.jpg" alt="Trident Nariman Point">
+      <h3>Trident Nariman Point</h3>
+      <p>Starting at ₹9,500/night</p>
+      <button onclick="bookHotel('Trident Nariman Point')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>2D/1N Mumbai Highlights</h3>
+      <ul>
+        <li>✔️ Gateway of India, Marine Drive, Chowpatty</li>
+        <li>✔️ Local food walk</li>
+        <li>✔️ Hotel + Cab + Guide</li>
+      </ul>
+      <p>₹4,299 per person</p>
+      <button onclick="bookPackage('Mumbai Highlights')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>3D/2N Bollywood Dream Trip</h3>
+      <ul>
+        <li>✔️ Film City Studio Tour</li>
+        <li>✔️ Elephanta Caves + Beach</li>
+        <li>✔️ Hotel + Pickup + Meals</li>
+      </ul>
+      <p>₹6,999 per person</p>
+      <button onclick="bookPackage('Bollywood Dream Trip')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Mumbai" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

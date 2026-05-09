@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leh - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>❄️ Leh – Land of High Passes</h1>
+  <img src="../media/images/leh.jpg" alt="Leh View" />
+
+  <section>
+    <h2>🌟 Must-Visit Spots</h2>
+    <ul>
+      <li>🏞️ Pangong Lake – mirror-like blue waters</li>
+      <li>🏔️ Khardung La – world’s highest motorable pass</li>
+      <li>🛕 Thiksey & Hemis Monasteries – peace & architecture</li>
+      <li>🎯 Magnetic Hill – optical illusion defying gravity</li>
+      <li>🕌 Leh Palace – 17th-century royal heritage</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Activities You’ll Love</h2>
+    <ul>
+      <li>🚴‍♂️ Biking across Nubra Valley & Chang La</li>
+      <li>🏕️ Camping at Pangong or Tso Moriri lakes</li>
+      <li>🧘‍♂️ Meditation in monasteries</li>
+      <li>📸 Stargazing and night photography</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>May to September (snow-free roads, clear skies)</p>
+  </section>
+
+  <section>
+    <h2>🏨 Recommended Stays</h2>
+    <ul>
+      <li>🌟 The Grand Dragon Ladakh – luxury in Leh</li>
+      <li>🏡 Zostel Leh – cozy, social, affordable</li>
+      <li>🛏️ Sangto Villa – family-run, local feel</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ Local Delights</h2>
+    <ul>
+      <li>🍜 Thukpa & Skyu – traditional Ladakhi noodle dishes</li>
+      <li>🥟 Momo (Veg & Buff)</li>
+      <li>☕ Butter Tea (Salted & warm)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Estimated Budget</h2>
+    <p>₹15,000 – ₹20,000 per person for 4-5 days (biking, stay, food)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Location Map</h2>
+    <iframe src="https://www.google.com/maps?q=leh+ladakh&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Breathtaking Visuals</h2>
+    <video controls>
+      <source src="../media/videos/leh.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Leh</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_granddragon.jpg" alt="The Grand Dragon Ladakh">
+      <h3>The Grand Dragon Ladakh</h3>
+      <p>Starting at ₹9,500/night</p>
+      <button onclick="bookHotel('The Grand Dragon Ladakh')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_shanti.jpg" alt="Hotel Shanti Palace">
+      <h3>Hotel Shanti Palace</h3>
+      <p>Starting at ₹3,800/night</p>
+      <button onclick="bookHotel('Hotel Shanti Palace')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>4D/3N Leh Essentials</h3>
+      <ul>
+        <li>✔️ Leh Market + Shanti Stupa</li>
+        <li>✔️ Nubra Valley + Transfers</li>
+        <li>✔️ Hotel + Meals</li>
+      </ul>
+      <p>₹8,499 per person</p>
+      <button onclick="bookPackage('Leh Essentials')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>6D/5N Ladakh Explorer</h3>
+      <ul>
+        <li>✔️ Pangong Lake + Khardung La</li>
+        <li>✔️ Camel Safari + Local Stays</li>
+        <li>✔️ All Permits + Meals</li>
+      </ul>
+      <p>₹14,999 per person</p>
+      <button onclick="bookPackage('Ladakh Explorer')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Leh" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

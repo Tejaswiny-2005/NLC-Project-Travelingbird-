@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kerala - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🌴 Kerala – God's Own Country</h1>
+  <img src="../media/images/kerala.jpg" alt="Kerala Backwaters" />
+
+  <section>
+    <h2>🌟 Top Places to Visit</h2>
+    <ul>
+      <li>🚤 Alleppey – backwaters & houseboat stays</li>
+      <li>🌄 Munnar – tea gardens & mountain breeze</li>
+      <li>🌳 Thekkady – wildlife sanctuary & spice plantations</li>
+      <li>🌅 Kovalam & Varkala – beaches & cliff sunsets</li>
+      <li>🌸 Wayanad – hills, waterfalls & caves</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Unique Experiences</h2>
+    <ul>
+      <li>🛶 Stay in a traditional houseboat on water</li>
+      <li>🌿 Ayurvedic massage and therapy retreat</li>
+      <li>🐘 Watch temple elephants and local festivals</li>
+      <li>🫖 Taste fresh spices from plantations</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>October to March (for cool, pleasant weather)</p>
+  </section>
+
+  <section>
+    <h2>🏨 Top Hotels & Resorts</h2>
+    <ul>
+      <li>🏝️ Kumarakom Lake Resort – luxury stay</li>
+      <li>🌴 Coconut Lagoon – traditional charm</li>
+      <li>🛶 Houseboats in Alleppey – unique experience</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍛 Food You Must Try</h2>
+    <ul>
+      <li>🍚 Kerala Sadya (feast on banana leaf)</li>
+      <li>🥥 Malabar Prawn Curry</li>
+      <li>🐟 Meen Pollichathu (fish in banana leaf)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Budget Range</h2>
+    <p>₹11,000 – ₹16,000 per person (including houseboat + meals)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Map Location</h2>
+    <iframe src="https://www.google.com/maps?q=kerala+india&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Kerala in Motion</h2>
+    <video controls>
+      <source src="../media/videos/kerala.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Kerala</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_kumarakom.jpg" alt="Kumarakom Lake Resort">
+      <h3>Kumarakom Lake Resort</h3>
+      <p>Starting at ₹8,200/night</p>
+      <button onclick="bookHotel('Kumarakom Lake Resort')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_alleppey.jpg" alt="Houseboat Stay - Alleppey">
+      <h3>Alleppey Houseboat Stay</h3>
+      <p>Starting at ₹3,500/night</p>
+      <button onclick="bookHotel('Alleppey Houseboat Stay')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>4D/3N Backwaters Bliss</h3>
+      <ul>
+        <li>✔️ Alleppey Houseboat + Meals</li>
+        <li>✔️ Kumarakom + Beach Stay</li>
+        <li>✔️ All Transfers + Breakfast</li>
+      </ul>
+      <p>₹7,999 per person</p>
+      <button onclick="bookPackage('Backwaters Bliss')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>6D/5N Kerala Nature Retreat</h3>
+      <ul>
+        <li>✔️ Munnar + Thekkady + Kochi</li>
+        <li>✔️ Tea Gardens, Forest Trails</li>
+        <li>✔️ Stay + Meals + Safari</li>
+      </ul>
+      <p>₹12,500 per person</p>
+      <button onclick="bookPackage('Kerala Nature Retreat')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Kerala" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

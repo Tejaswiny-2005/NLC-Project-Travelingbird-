@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rann of Kutch - TravelingBird</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🤍 Rann of Kutch – White Desert under the Moon</h1>
+  <img src="../media/images/rannofkutch.jpg" alt="White Desert View" />
+
+  <section>
+    <h2>🌟 Highlights</h2>
+    <ul>
+      <li>🌕 Great Rann of Kutch – surreal white salt desert</li>
+      <li>🏕️ Tent City Dhordo – luxury desert camping</li>
+      <li>💃 Rann Utsav – folk dance, music, handicrafts</li>
+      <li>🌸 Kala Dungar – highest hill with panoramic views</li>
+      <li>📸 Moonrise on salt plains – once-in-a-lifetime sight</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Magical Experiences</h2>
+    <ul>
+      <li>🐫 Camel cart ride on salt desert</li>
+      <li>🎨 Buy Kutchi embroidery, bandhni, leather goods</li>
+      <li>🥁 Watch Garba and Dandiya in Rann Utsav</li>
+      <li>🧂 Walk barefoot on salt under the stars</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>November to February (especially during full moon & Rann Utsav)</p>
+  </section>
+
+  <section>
+    <h2>🏨 Where to Stay</h2>
+    <ul>
+      <li>🏕️ White Rann Resort or Tent City Dhordo</li>
+      <li>🛏️ Bhuj city hotels (1-hour drive)</li>
+      <li>🏠 Local homestays in Hodka, Banni villages</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ What to Eat</h2>
+    <ul>
+      <li>🍛 Kathiyawadi thali – spicy & hearty</li>
+      <li>🌽 Bajra rotla, lasaniya batata, khichdi</li>
+      <li>🍬 Fafda, jalebi & buttermilk combo</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Budget Estimate</h2>
+    <p>₹7,000 – ₹12,000 per person (2N/3D with tent + Utsav + camel ride)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Rann of Kutch on Map</h2>
+    <iframe src="https://www.google.com/maps?q=rann+of+kutch&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Rann Utsav Vibes</h2>
+    <video controls>
+      <source src="../media/videos/rannofkutch.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Rann of Kutch</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_tentcity.jpg" alt="Tent City Resort">
+      <h3>Tent City Resort</h3>
+      <p>Starting at ₹7,500/night</p>
+      <button onclick="bookHotel('Tent City Resort')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_whiterann.jpg" alt="White Rann Resort">
+      <h3>White Rann Resort</h3>
+      <p>Starting at ₹4,200/night</p>
+      <button onclick="bookHotel('White Rann Resort')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>3D/2N Cultural Kutch Tour</h3>
+      <ul>
+        <li>✔️ 2-night stay in Bhunga huts</li>
+        <li>✔️ Entry to Rann Utsav Festival</li>
+        <li>✔️ Folk Dance & Food Experience</li>
+      </ul>
+      <p>₹6,999 per person</p>
+      <button onclick="bookPackage('Cultural Kutch Tour')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>5D/4N Luxury Desert Safari</h3>
+      <ul>
+        <li>✔️ Luxury Tent Stay</li>
+        <li>✔️ Kalo Dungar + Dholavira + Wildlife Tour</li>
+        <li>✔️ Private AC Cab + Local Guide</li>
+      </ul>
+      <p>₹11,999 per person</p>
+      <button onclick="bookPackage('Luxury Desert Safari')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Rann of Kutch" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

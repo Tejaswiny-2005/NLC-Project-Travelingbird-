@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jaipur - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🌸 Jaipur – The Pink City</h1>
+  <img src="../media/images/jaipur.jpg" alt="Jaipur City View" />
+
+  <section>
+    <h2>🌟 Must-Visit Attractions</h2>
+    <ul>
+      <li>🏯 Amber Fort – majestic elephant ride & history</li>
+      <li>🏰 City Palace – royal residence & museum</li>
+      <li>🌬️ Hawa Mahal – Palace of Winds</li>
+      <li>🌕 Jantar Mantar – astronomy at its best</li>
+      <li>🛍️ Bapu Bazaar – traditional Rajasthani shopping</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Top Experiences</h2>
+    <ul>
+      <li>🐘 Ride an elephant at Amber Fort</li>
+      <li>🎨 Watch block printing & blue pottery artisans</li>
+      <li>🌇 Sunset at Nahargarh Fort</li>
+      <li>📸 Wear royal attire for a palace photo shoot</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>October to March (cool weather, perfect for forts and bazaars)</p>
+  </section>
+
+  <section>
+    <h2>🏨 Suggested Hotels</h2>
+    <ul>
+      <li>🏯 Samode Haveli – royal heritage charm</li>
+      <li>🛎️ Hilton Jaipur – comfort & luxury</li>
+      <li>🏡 Alsisar Haveli – peaceful stay near city center</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ Jaipur Food Trail</h2>
+    <ul>
+      <li>🍛 Dal Baati Churma</li>
+      <li>🌶️ Ker Sangri & Gatte ki Sabzi</li>
+      <li>🍧 Ghevar & Mawa Kachori</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Budget Range</h2>
+    <p>₹8,000 – ₹11,000 per person (2 nights / 3 days)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Location Map</h2>
+    <iframe src="https://www.google.com/maps?q=jaipur+rajasthan&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Travel Video</h2>
+    <video controls>
+      <source src="../media/videos/jaipur.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Jaipur</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_alsisar.jpg" alt="Alsisar Haveli">
+      <h3>Alsisar Haveli</h3>
+      <p>Starting at ₹4,200/night</p>
+      <button onclick="bookHotel('Alsisar Haveli')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_trident.jpg" alt="Trident Jaipur">
+      <h3>Trident Jaipur</h3>
+      <p>Starting at ₹6,000/night</p>
+      <button onclick="bookHotel('Trident Jaipur')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>3D/2N Jaipur Heritage Tour</h3>
+      <ul>
+        <li>✔️ Amer Fort + Hawa Mahal</li>
+        <li>✔️ City Palace + Jantar Mantar</li>
+        <li>✔️ Hotel + Transfers + Guide</li>
+      </ul>
+      <p>₹5,499 per person</p>
+      <button onclick="bookPackage('Jaipur Heritage Tour')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>5D/4N Royal Rajasthan Trail</h3>
+      <ul>
+        <li>✔️ Jaipur + Jodhpur + Udaipur</li>
+        <li>✔️ Stay at Heritage Hotels</li>
+        <li>✔️ All Sightseeing & Meals</li>
+      </ul>
+      <p>₹12,999 per person</p>
+      <button onclick="bookPackage('Royal Rajasthan Trail')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Jaipur" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

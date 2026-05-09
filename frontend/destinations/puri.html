@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Puri - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🕉️ Puri – Land of Lord Jagannath & Golden Sands</h1>
+  <img src="../media/images/puri.jpg" alt="Jagannath Temple and Beach" />
+
+  <section>
+    <h2>🌟 Major Attractions</h2>
+    <ul>
+      <li>🛕 Jagannath Temple – one of the Char Dham pilgrimages</li>
+      <li>🚩 Rath Yatra Festival – world-famous chariot celebration</li>
+      <li>🌊 Puri Beach – golden sands and temple coast</li>
+      <li>🕊️ Swargadwar – sacred sea-side cremation ghat</li>
+      <li>🎨 Raghurajpur – artisan village of pattachitra</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Cultural Bliss</h2>
+    <ul>
+      <li>🙏 Attend the temple arti & witness Mahaprasad rituals</li>
+      <li>🌴 Relax at golden beaches with coconut drinks</li>
+      <li>🎭 See Gotipua and Odissi classical dance performances</li>
+      <li>🎁 Shop for conch shells & appliqué art in Pipili</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>November to February (pleasant beach weather) or June/July during Rath Yatra</p>
+  </section>
+
+  <section>
+    <h2>🏨 Where to Stay</h2>
+    <ul>
+      <li>🏖️ Mayfair Waves – luxury beach resort</li>
+      <li>🏨 Hotel Holiday Resort – ocean view comfort</li>
+      <li>🛏️ Budget dharamshalas near temple area</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ What to Eat</h2>
+    <ul>
+      <li>🍛 Mahaprasad from the temple (56 bhog)</li>
+      <li>🌶️ Dalma, Khichdi & Odia thali</li>
+      <li>🍬 Rasabali & Chhena Poda sweets</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Budget Estimate</h2>
+    <p>₹4,000 – ₹8,000 per person (2N/3D darshan + beach trip)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Puri on Map</h2>
+    <iframe src="https://www.google.com/maps?q=puri+jagannath+temple&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Puri Moments</h2>
+    <video controls>
+      <source src="../media/videos/puri.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Puri</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_mayfair_puri.jpg" alt="Mayfair Heritage">
+      <h3>Mayfair Heritage</h3>
+      <p>Starting at ₹4,800/night</p>
+      <button onclick="bookHotel('Mayfair Heritage')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_lotus_resort.jpg" alt="Lotus Eco Resort">
+      <h3>Lotus Eco Resort</h3>
+      <p>Starting at ₹3,200/night</p>
+      <button onclick="bookHotel('Lotus Eco Resort')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>2D/1N Puri Darshan Package</h3>
+      <ul>
+        <li>✔️ Jagannath Temple VIP Darshan</li>
+        <li>✔️ Golden Beach Tour</li>
+        <li>✔️ 3-star Hotel + Breakfast</li>
+      </ul>
+      <p>₹3,499 per person</p>
+      <button onclick="bookPackage('Puri Darshan Package')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>4D/3N Puri-Konark-Chilika Tour</h3>
+      <ul>
+        <li>✔️ Stay in luxury hotels</li>
+        <li>✔️ Konark Sun Temple + Dolphin View</li>
+        <li>✔️ Temple guide + Transport</li>
+      </ul>
+      <p>₹7,999 per person</p>
+      <button onclick="bookPackage('Puri-Konark-Chilika Tour')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+  
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Puri" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

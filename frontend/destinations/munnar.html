@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Munnar - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🌿 Munnar – Tea Gardens & Cloudy Hills</h1>
+  <img src="../media/images/munnar.jpg" alt="Munnar Tea Valley View" />
+
+  <section>
+    <h2>🌟 Must-See Places</h2>
+    <ul>
+      <li>🍃 Kolukkumalai – world’s highest tea plantation</li>
+      <li>🐘 Eravikulam National Park – home of Nilgiri Tahr</li>
+      <li>💧 Attukad Waterfalls – hidden gem in jungle trail</li>
+      <li>🌄 Top Station – epic viewpoint of misty hills</li>
+      <li>🌱 Tea Museum – learn the story of your cup</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Hilltop Experiences</h2>
+    <ul>
+      <li>🧘 Breathe in calm on a tea estate walk</li>
+      <li>🚙 Drive through zig-zag roads in clouds</li>
+      <li>🐘 Spot wild elephants & waterfalls in forest</li>
+      <li>🍵 Taste fresh tea from the source</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>September to March – cool, green & foggy season</p>
+  </section>
+
+  <section>
+    <h2>🏨 Where to Stay</h2>
+    <ul>
+      <li>🌲 Parakkat Nature Resort – luxury in the clouds</li>
+      <li>🍃 Tea County Munnar – garden views & comfort</li>
+      <li>🛏️ Treehouses & cottages near waterfalls</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ What to Eat</h2>
+    <ul>
+      <li>🍛 Kerala Sadya (banana leaf veg meal)</li>
+      <li>🐟 Fish curry & appam</li>
+      <li>🍲 Vegetable stew with puttu & kadala</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Budget Estimate</h2>
+    <p>₹4,000 – ₹8,000 per person (2N/3D with jeep safari & tea walk)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Munnar on Map</h2>
+    <iframe src="https://www.google.com/maps?q=munnar+kerala&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Munnar Moments</h2>
+    <video controls>
+      <source src="../media/videos/munnar.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Munnar</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_fogmunnar.jpg" alt="The Fog Munnar">
+      <h3>The Fog Munnar Resort</h3>
+      <p>Starting at ₹4,500/night</p>
+      <button onclick="bookHotel('The Fog Munnar Resort')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_fragrantnature.jpg" alt="Fragrant Nature Resort">
+      <h3>Fragrant Nature Resort</h3>
+      <p>Starting at ₹3,800/night</p>
+      <button onclick="bookHotel('Fragrant Nature Resort')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>2D/1N Tea Garden Escape</h3>
+      <ul>
+        <li>✔️ Stay near Tea Plantations</li>
+        <li>✔️ Tea Museum & Photo Stops</li>
+        <li>✔️ Campfire + Meals</li>
+      </ul>
+      <p>₹4,299 per person</p>
+      <button onclick="bookPackage('Tea Garden Escape')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>4D/3N Romantic Munnar Getaway</h3>
+      <ul>
+        <li>✔️ Candlelight dinner + Valley view stay</li>
+        <li>✔️ Jeep Safari + Waterfalls</li>
+        <li>✔️ Daily breakfast & sightseeing</li>
+      </ul>
+      <p>₹10,499 per person</p>
+      <button onclick="bookPackage('Romantic Munnar Getaway')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Munnar" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Varanasi - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🪔 Varanasi – City of Lights & Spirituality</h1>
+  <img src="../media/images/varanasi.jpg" alt="Varanasi Ganga Aarti" />
+
+  <section>
+    <h2>🌟 Famous Attractions</h2>
+    <ul>
+      <li>🕯️ Dashashwamedh Ghat – grand Ganga Aarti at sunset</li>
+      <li>🛕 Kashi Vishwanath Temple – one of the 12 Jyotirlingas</li>
+      <li>🛶 Assi Ghat – serene mornings & classical music</li>
+      <li>📚 Banaras Hindu University – heritage & art museum</li>
+      <li>🎭 Ramnagar Fort – royal legacy & antiques</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Things to Experience</h2>
+    <ul>
+      <li>🛶 Early morning boat ride on Ganga</li>
+      <li>🕉️ Attend evening Aarti with lamps & chants</li>
+      <li>🪔 Offer flowers and diya on the river</li>
+      <li>🎨 Explore silk weaving & temple street markets</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>October to March – pleasant winter air and festivals like Dev Diwali</p>
+  </section>
+
+  <section>
+    <h2>🏨 Top Places to Stay</h2>
+    <ul>
+      <li>🌟 Brij Rama Palace – royal stay right on the ghat</li>
+      <li>🏨 Taj Ganges – modern comfort & luxury</li>
+      <li>🛌 Zostel Varanasi – social, budget-friendly</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ Must-Try Foods</h2>
+    <ul>
+      <li>🍛 Kachori Sabzi & Jalebi for breakfast</li>
+      <li>🍲 Tamatar Chaat at Kashi Chaat Bhandar</li>
+      <li>🥤 Banarasi Lassi & Paan</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Estimated Budget</h2>
+    <p>₹6,000 – ₹9,000 per person (2N/3D incl. stay + local tours)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Varanasi Map</h2>
+    <iframe src="https://www.google.com/maps?q=varanasi+uttar+pradesh&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Watch the Aarti</h2>
+    <video controls>
+      <source src="../media/videos/varanasi.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Varanasi</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_brijrama.jpg" alt="BrijRama Palace">
+      <h3>BrijRama Palace</h3>
+      <p>Starting at ₹7,200/night</p>
+      <button onclick="bookHotel('BrijRama Palace')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_surya.jpg" alt="Hotel Surya">
+      <h3>Hotel Surya</h3>
+      <p>Starting at ₹3,000/night</p>
+      <button onclick="bookHotel('Hotel Surya')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>2D/1N Ganga Aarti Experience</h3>
+      <ul>
+        <li>✔️ Evening Boat Ride</li>
+        <li>✔️ Ganga Aarti + Temple Visit</li>
+        <li>✔️ Hotel Stay + Transfers</li>
+      </ul>
+      <p>₹2,999 per person</p>
+      <button onclick="bookPackage('Ganga Aarti Experience')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>4D/3N Spiritual Varanasi Tour</h3>
+      <ul>
+        <li>✔️ Sarnath, Kashi Vishwanath</li>
+        <li>✔️ Morning Yoga + City Tour</li>
+        <li>✔️ Meals + Stay + Pickup</li>
+      </ul>
+      <p>₹5,999 per person</p>
+      <button onclick="bookPackage('Spiritual Varanasi Tour')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Varanasi" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

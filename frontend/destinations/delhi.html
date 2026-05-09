@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Delhi - TravelingBird</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🏙️ Delhi – Heart of India</h1>
+  <img src="../media/images/delhi.jpg" alt="India Gate at Night" />
+
+  <section>
+    <h2>🌟 Must-See Spots</h2>
+    <ul>
+      <li>🕌 Red Fort – Mughal marvel & light show</li>
+      <li>🇮🇳 India Gate – iconic war memorial</li>
+      <li>🕍 Qutub Minar – 12th century tower</li>
+      <li>🌺 Lotus Temple – silent meditation spot</li>
+      <li>🏰 Humayun’s Tomb – early Mughal beauty</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Activities to Enjoy</h2>
+    <ul>
+      <li>🚇 Ride Delhi Metro across old & new city</li>
+      <li>🍛 Food walk in Chandni Chowk (parathas, jalebi, kebabs)</li>
+      <li>🛍️ Street shopping at Sarojini Nagar or Janpath</li>
+      <li>📸 Sunrise at Lodhi Garden or India Gate</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>October to March – pleasant winter vibes with cultural festivals</p>
+  </section>
+
+  <section>
+    <h2>🏨 Top Places to Stay</h2>
+    <ul>
+      <li>🌟 The Imperial – colonial-style 5-star luxury</li>
+      <li>🛎️ Taj Mahal Hotel, Delhi – grandeur in central Delhi</li>
+      <li>🏡 Bloomrooms @ New Delhi Railway Station – clean, chic & budget</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ Must-Try Food</h2>
+    <ul>
+      <li>🌯 Butter Chicken & Roomali Roti</li>
+      <li>🥘 Chole Bhature & Aloo Tikki</li>
+      <li>🍦 Daulat ki Chaat & Kulfi</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Budget Guide</h2>
+    <p>₹6,000 – ₹10,000 per person for 2 nights with local travel, food & sightseeing</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Delhi on Map</h2>
+    <iframe src="https://www.google.com/maps?q=delhi+india&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Discover Delhi</h2>
+    <video controls>
+      <source src="../media/videos/delhi.mp4" type="video/mp4" />
+    </video>
+  </section>
+<!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Delhi</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_lalit.jpg" alt="The Lalit New Delhi">
+      <h3>The Lalit New Delhi</h3>
+      <p>Starting at ₹6,500/night</p>
+      <button onclick="bookHotel('The Lalit New Delhi')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_maidens.jpg" alt="Maidens Hotel">
+      <h3>Maidens Hotel</h3>
+      <p>Starting at ₹5,200/night</p>
+      <button onclick="bookHotel('Maidens Hotel')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>2D/1N Old Delhi Heritage Tour</h3>
+      <ul>
+        <li>✔️ Red Fort, Jama Masjid, Chandni Chowk</li>
+        <li>✔️ Rickshaw Ride + Street Food Tasting</li>
+        <li>✔️ Stay + Local Transfers</li>
+      </ul>
+      <p>₹3,799 per person</p>
+      <button onclick="bookPackage('Old Delhi Heritage Tour')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>3D/2N Delhi Capital Explorer</h3>
+      <ul>
+        <li>✔️ Qutub Minar, Lotus Temple, India Gate</li>
+        <li>✔️ Hotel Stay + Airport Pickup</li>
+        <li>✔️ Breakfast + City Guide</li>
+      </ul>
+      <p>₹5,999 per person</p>
+      <button onclick="bookPackage('Delhi Capital Explorer')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Delhi" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pondicherry - TravelingBrid</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+      background-size: 300px;
+      background-attachment: fixed;
+    }
+    nav {
+      background: #0077b6;
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      background: white;
+      color: #0077b6;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    video, iframe, img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .booking-form input, .booking-form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    .booking-form button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #005f8e;
+    }
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../js/script.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../destinations.html" class="active">Destinations</a>
+  <a href="../map.html">Map</a>
+  <a href="../planner.html">Planner</a>
+  <a href="../dashboard.html">Dashboard</a>
+  <a href="../signup.html">Login / Signup</a>
+</nav>
+
+<main>
+  <h1>🌴 Pondicherry – French Bliss by the Bay</h1>
+  <img src="../media/images/pondicherry.jpg" alt="Pondicherry Beachfront" />
+
+  <section>
+    <h2>🌟 Places to Discover</h2>
+    <ul>
+      <li>🎨 White Town – pastel houses, cafés & murals</li>
+      <li>🌊 Promenade Beach – early morning walk & sea breeze</li>
+      <li>🕉️ Auroville – meditation, peace, and Matrimandir</li>
+      <li>🏖️ Paradise Beach – ferry ride to golden sands</li>
+      <li>⛪ Basilica of the Sacred Heart of Jesus – gothic beauty</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎯 Experiences to Enjoy</h2>
+    <ul>
+      <li>☕ French brunch at Coromandel Café</li>
+      <li>🚲 Cycle around French streets & graffiti walls</li>
+      <li>🧘‍♀️ Yoga session at Auroville</li>
+      <li>📷 Photo walk through mustard-yellow lanes</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🗓️ Best Time to Visit</h2>
+    <p>October to March – perfect for beach time & cool weather</p>
+  </section>
+
+  <section>
+    <h2>🏨 Where to Stay</h2>
+    <ul>
+      <li>🏨 La Villa – heritage stay in White Town</li>
+      <li>🌊 The Promenade – beach-facing beauty</li>
+      <li>🛏️ Serenity Beach BnB – quiet and budget-friendly</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🍽️ Must-Try Dishes</h2>
+    <ul>
+      <li>🥖 Croissants, baguettes & French breakfast</li>
+      <li>🥘 Creole cuisine – Tamil & French fusion</li>
+      <li>🍧 Gelato & coffee at seaside cafés</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Estimated Budget</h2>
+    <p>₹6,000 – ₹10,000 for 2-night trip (stay + cafés + local travel)</p>
+  </section>
+
+  <section>
+    <h2>🗺️ Pondicherry Map</h2>
+    <iframe src="https://www.google.com/maps?q=pondicherry+india&output=embed" height="300"></iframe>
+  </section>
+
+  <section>
+    <h2>🎥 Pondy Vibes</h2>
+    <video controls>
+      <source src="../media/videos/pondicherry.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Hotels & Packages Section -->
+<section class="hotels-packages">
+  <h2>🏨 Recommended Hotels in Pondicherry</h2>
+  <div class="hotel-cards">
+    <div class="hotel-card">
+      <img src="../media/images/hotel_promenade.jpg" alt="The Promenade">
+      <h3>The Promenade</h3>
+      <p>Starting at ₹5,000/night</p>
+      <button onclick="bookHotel('The Promenade')">Book Room</button>
+    </div>
+    <div class="hotel-card">
+      <img src="../media/images/hotel_le_dupleix.jpg" alt="Le Dupleix">
+      <h3>Le Dupleix</h3>
+      <p>Starting at ₹4,200/night</p>
+      <button onclick="bookHotel('Le Dupleix')">Book Room</button>
+    </div>
+  </div>
+
+  <h2>📦 Popular Packages</h2>
+  <div class="package-cards">
+    <div class="package-card">
+      <h3>2D/1N Beach Retreat</h3>
+      <ul>
+        <li>✔️ Stay near Serenity Beach</li>
+        <li>✔️ French Quarter Walking Tour</li>
+        <li>✔️ Complimentary Breakfast</li>
+      </ul>
+      <p>₹3,899 per person</p>
+      <button onclick="bookPackage('Beach Retreat')">Book Package</button>
+    </div>
+    <div class="package-card">
+      <h3>3D/2N Pondy Heritage Getaway</h3>
+      <ul>
+        <li>✔️ Auroville & Aurobindo Ashram</li>
+        <li>✔️ Café hopping + Local Markets</li>
+        <li>✔️ Transfers + Hotel + Guide</li>
+      </ul>
+      <p>₹6,499 per person</p>
+      <button onclick="bookPackage('Pondy Heritage Getaway')">Book Package</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function bookHotel(name) {
+    alert(`✅ Hotel Booked: ${name}\nThank you for choosing TravelingBird!`);
+  }
+
+  function bookPackage(name) {
+    alert(`✅ Package Booked: ${name}\nHappy exploring with TravelingBird!`);
+  }
+</script>
+
+  <section class="booking-form">
+    <h2>📝 Book This Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input type="hidden" id="destination" value="Pondicherry" />
+      <label>Travel Date:</label>
+      <input type="date" id="date" required />
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" required />
+      <button type="submit">Pay & Book</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
